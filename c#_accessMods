@@ -1,6 +1,8 @@
 //a program that gets the quotient and the remainder of 2 numbers
 //programmed by Khent Jay Desierto
 
+using System;
+
 namespace AccessModifiers
 {
     internal class Program
@@ -12,7 +14,6 @@ namespace AccessModifiers
 
             Console.WriteLine(d.div(15, 4));
             Console.WriteLine(m.mod(15, 4));
-               
         }
     }
     class DivideModulo
