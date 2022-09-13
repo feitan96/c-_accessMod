@@ -1,0 +1,31 @@
+//Array numbers reverse order
+
+using System;
+
+class MainClass
+{
+  
+    static public void Main()
+    {
+        int i, n;
+        int[] arryNum = new int[10];
+        Console.WriteLine("How many numbers would you like to store in an array?");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Input {0} elements in the array:", n);
+        for (i = 0; i < n; i++)
+        {
+            Console.WriteLine("Element {0}:", i + 1);
+            arryNum[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.Write("Elements of array in original order: ");
+        for (i = 0; i < n; i++) 
+        {
+            Console.Write("{0} ",arryNum[i]);
+        }
+        Console.Write("\nElements of array in reverse order: ");
+        for (i = n - 1; i >= 0; i--) 
+        {
+            Console.Write("{0} ",arryNum[i]);
+        }
+    }
+}
