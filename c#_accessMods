@@ -1,0 +1,29 @@
+//a program that gets the quotient and the remainder of 2 numbers
+//programmed by Khent Jay Desierto
+
+namespace AccessModifiers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            DivideModulo d = new DivideModulo();
+            DivideModulo m = new DivideModulo();
+
+            Console.WriteLine(d.div(15, 4));
+            Console.WriteLine(m.mod(15, 4));
+               
+        }
+    }
+    class DivideModulo
+    {
+        public double div(int num1, int num2)
+        {
+            return num1 / num2;
+        }
+        public double mod(int num1, int num2)
+        {
+            return num1 % num2;
+        }
+    }
+}
