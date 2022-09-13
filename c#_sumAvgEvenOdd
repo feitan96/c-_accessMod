@@ -1,0 +1,51 @@
+//getting sum and average of odd and even numbers
+
+using System;
+
+class SumAve
+{
+    static void Main()
+    {
+        int n, i, sumE = 0, sumO = 0;
+        int aveE, aveO, numE=0, numO=0;
+        int[] numArray = new int[99];
+        Console.WriteLine("How many integers would you like to enter?");
+        n = Convert.ToInt32(Console.ReadLine());
+      
+        for (i=1; i<=n; i++)
+        {
+            Console.WriteLine("Integer {0}: ",i);
+            numArray[i] = Convert.ToInt32(Console.ReadLine()); 
+            if (numArray[i]%2 == 0){
+                sumE += numArray[i];
+                numE++;
+            }
+            else{
+                sumO += numArray[i];
+                numO++;
+            }
+        }
+        Console.Write("Elements of array: ");
+      
+        for(i=1; i<=n; i++){
+            Console.Write("{0} ", numArray[i]);
+        }
+      
+        Console.WriteLine("\nSum of even integers: {0}", sumE);
+        Console.WriteLine("Sum of odd integers: {0}", sumO);
+        aveE = sumE/numE;
+        aveO = sumO/numO;
+        Console.WriteLine("Average of even integers: {0}", aveE);
+        Console.WriteLine("Average of odd integers: {0}", aveO);
+    }
+}
+
+
+
+
+
+
+
+
+
+
