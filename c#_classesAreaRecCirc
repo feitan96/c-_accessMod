@@ -1,0 +1,60 @@
+using System;
+
+public class CircleArea
+{
+    private double r;
+    public double Radius{
+        get { return r; }
+        set { r = value; }
+    }
+    public double getCircleArea1(){
+        double N = (r * r) * Math.PI;
+        double getAreaC = (r * r) * Math.Round((Double)N, 4);
+        return getAreaC;
+    }
+}
+
+public class RecArea
+{
+    private double l, w;
+    public double Length{
+        get{ return this.l; }
+        set{ this.l = value; }      
+    }
+    public double Width{
+        get{ return this.w; }
+        set{ this.w = value; }
+    }
+    
+    public double getRecArea1(){
+        double getAreaR = l * w;
+        return getAreaR;
+    }
+}
+
+namespace AreaOfCircleOrRec
+{
+    internal class Area
+    {
+        static void Main(string[] args)
+        {
+            CircleArea areaC = new CircleArea();
+            Console.WriteLine("Input the radius of circle: ");
+            areaC.Radius = double.Parse(Console.ReadLine());
+            double CircleArea1 = areaC.getCircleArea1();
+
+            Console.WriteLine("Area of the circle is " + CircleArea1);
+            Console.ReadKey();
+
+            RecArea areaR = new RecArea();
+            Console.Write("\nInput the length of rectangle: ");
+            areaR.Length = double.Parse(Console.ReadLine());
+            Console.Write("Input the width of rectangle: ");
+            areaR.Width = double.Parse(Console.ReadLine());
+            double RecArea1 = areaR.getRecArea1();
+
+            Console.WriteLine("Area of the rectangle is: " + RecArea1);
+            Console.ReadKey();     
+        }
+    }
+}
