@@ -1,0 +1,37 @@
+//Array num average, sum
+
+using System;
+
+class MainClass {
+
+    static public void Main()
+    {
+    	int i, n;
+        double avg = 0;
+        double s = 0;
+        int[] arryNum = new int[11];
+        Console.WriteLine("How many numbers would you like to store in an array?");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Input {0} elements in the array:", n);
+        for (i = 0; i < n; i++)
+        {
+            Console.WriteLine("Element {0}: ", i + 1);
+            arryNum[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.Write("Elements of array: ");
+        for (i=0; i<n; i++)
+        {
+            Console.Write("{0} ", arryNum[i]);
+        }
+        for (i=0; i<n; i++)
+        {
+            s += arryNum[i];
+        }
+        Console.WriteLine("\nSum = {0}", s);
+        for (i=0; i<n; i++)
+        {
+            avg = s / n;
+        }
+        Console.Write("Average = {0:f3}", avg);  
+    }
+}
