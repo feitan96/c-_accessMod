@@ -1,0 +1,106 @@
+//progamm by Khent Jay C. Desieto
+using System;
+
+namespace Assignment2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char choice;
+
+            Console.Write("Are you a STUDENT or a WORKER?");
+            Console.Write("\tType 0 if STUDENT, type 1 if WORKER: ");
+            choice = Convert.ToChar(Console.ReadLine());
+
+            if (choice == '0')
+            {
+                Student s = new Student();
+            }
+            else if (choice == '1')
+            {
+                double result;
+                Worker w = new Worker();
+                result = w.hourlyPayRate();
+                Console.WriteLine("\nResult:");
+                Console.WriteLine("{0} {1}", w.firstName, w.lastName);
+                Console.WriteLine("Hourly wage: {0:f2}", w.result);
+
+            }
+        }
+    }
+    //Define a class Human with properties "first name" and "last name"
+    class Human
+    {
+        public string firstName;
+        public string lastName;
+
+        public Human()
+        {
+            Console.WriteLine("First Name: ");
+            firstName = Console.ReadLine();
+            Console.WriteLine("Last Name: ");
+            lastName = Console.ReadLine();
+        }
+    }
+    //Define the class Student inheriting Human, which has the property "mark"
+    class Student : Human
+    {
+        public int Mark;
+        public Student()
+        {
+            Console.Write("Enter your score: ");
+            Mark = Convert.ToInt32(Console.ReadLine());
+            if (Mark <= 100 && Mark >= 90){
+                Console.WriteLine("\nResult:");
+                Console.WriteLine("{0} {1}", firstName, lastName);
+                Console.WriteLine("Grade: A");
+            }
+            else if (Mark <= 89 && Mark >= 80){
+                Console.WriteLine("\nResult:");
+                Console.WriteLine("{0} {1}", firstName, lastName);
+                Console.WriteLine("Grade: B");
+            } 
+            else if (Mark <= 79 && Mark >= 70){
+                Console.WriteLine("\nResult:");
+                Console.WriteLine("{0} {1}", firstName, lastName);
+                Console.WriteLine("Grade: C");
+            } 
+            else if (Mark <= 69 && Mark >= 65){
+                Console.WriteLine("\nResult:");
+                Console.WriteLine("{0} {1}", firstName, lastName);
+                Console.WriteLine("Grade: D");
+            } 
+            else if (Mark <= 64 && Mark >= 0){
+                Console.WriteLine("\nResult:");
+                Console.WriteLine("{0} {1}", firstName, lastName);
+                Console.WriteLine("Grade: F");
+            } 
+            else{
+                Console.WriteLine("\nInvalid Input");
+            }
+        }
+    }
+    //Define the class Worker inheriting Human with the property 
+    //"wage" and "hours worked"
+    class Worker : Human
+    {
+        public double wage;
+        public double hoursWorked;
+        public double result;
+
+        public Worker()
+        {
+            Console.Write("Wage: ");
+            wage = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Hours Worked: ");
+            hoursWorked = Convert.ToDouble(Console.ReadLine());
+        }
+        //Implement a "calculate hourly wage" method, which calculates a 
+        //worker's hourly pay rate based on wage and hours worked
+        public double hourlyPayRate(){
+            result = wage / hoursWorked;
+            return result;
+        }
+    }
+}
